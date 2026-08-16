@@ -11,6 +11,12 @@ namespace OcrMyPdf.Logic
 
         public MultiOptionTemplate optimisationLevel { get; set; }  = OptimisationLevel.OptionList.Single(o => o.identifier == "Default");
 
+        public MultiOptionTemplate cleaningOption { get; set; }      = CleaningOption.OptionList.Single(o => o.identifier == "Disabled");
+
+        public string languages { get; set; }                        = "";
+
+        public string tesseractPageSegMode { get; set; }             = "3";
+
         public string outputSuffix { get; set; }                    = "_Searchable";
 
         public bool rotate { get; set; }                            = true;

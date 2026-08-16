@@ -43,7 +43,7 @@ namespace OcrMyPdf.Gui.ViewModel
         {
             // Set the default window dimensions
             this.XWidth = 500;
-            this.YHeight = 660;
+            this.YHeight = 720;
 
             // Advanced options are non-expanded by default
             this.AdvancedOptionsExpanded = false;
@@ -139,6 +139,35 @@ namespace OcrMyPdf.Gui.ViewModel
             set { ocrOptions.optimisationLevel = value; OnPropertyChanged(); }
         }
 
+        // ----- Cleaning mode
+
+        public ObservableCollection<MultiOptionTemplate> CleaningOption
+        {
+            get { return Logic.Options.CleaningOption.OptionList; }
+        }
+
+        public MultiOptionTemplate CleaningOption_Selected
+        {
+            get { return ocrOptions.cleaningOption; }
+            set { ocrOptions.cleaningOption = value; OnPropertyChanged(); }
+        }
+
+        // ----- OCR languages
+
+        public string Languages
+        {
+            get { return ocrOptions.languages; }
+            set { ocrOptions.languages = value; OnPropertyChanged(); }
+        }
+
+        // ----- Tesseract page segmentation mode
+
+        public string TesseractPageSegMode
+        {
+            get { return ocrOptions.tesseractPageSegMode; }
+            set { ocrOptions.tesseractPageSegMode = value; OnPropertyChanged(); }
+        }
+
         // ----- Output File Suffix
 
         public string Suffix
@@ -162,9 +191,6 @@ namespace OcrMyPdf.Gui.ViewModel
             get { return ocrOptions.rotate; }
             set { ocrOptions.rotate = value; OnPropertyChanged(); }
         }
-
-
-
 
         // ---------------------- ADVANCED OPTIONS ----------------------
 
