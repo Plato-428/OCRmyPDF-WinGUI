@@ -67,9 +67,23 @@ namespace OcrMyPdf.Logic
 
             argsBuilder.AppendWithSeparator(argsSprtr, optionSet.optimisationLevel.argument);
 
+            argsBuilder.AppendWithSeparator(argsSprtr, optionSet.cleaningOption.argument);
+
             if (optionSet.rotate) argsBuilder.AppendWithSeparator(argsSprtr, SimpleOptionParams.rotate);
 
             if (optionSet.deskew) argsBuilder.AppendWithSeparator(argsSprtr, SimpleOptionParams.deskew);
+
+            if (!string.IsNullOrWhiteSpace(optionSet.languages))
+            {
+                argsBuilder.AppendWithSeparator(argsSprtr, SimpleOptionParams.language);
+                argsBuilder.AppendWithSeparator(argsSprtr, optionSet.languages.Trim());
+            }
+
+            if (!string.IsNullOrWhiteSpace(optionSet.tesseractPageSegMode))
+            {
+                argsBuilder.AppendWithSeparator(argsSprtr, SimpleOptionParams.tesseractPageSegMode);
+                argsBuilder.AppendWithSeparator(argsSprtr, optionSet.tesseractPageSegMode.Trim());
+            }
 
             return argsBuilder.ToString();
         }

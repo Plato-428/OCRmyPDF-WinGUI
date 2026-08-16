@@ -5,5 +5,9 @@
         public static string rotate = "--rotate-pages";
 
         public static string deskew = "--deskew";
+
+        public static string tesseractPageSegMode = "--tesseract-pagesegmode";
+
+        public static string language = "-l";
     }
 }

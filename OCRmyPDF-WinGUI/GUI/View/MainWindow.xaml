@@ -67,6 +67,9 @@
             <!--  Expanded:  -->
             <!--<RowDefinition Height="90" />-->
 
+            <!--  Third row of options  -->
+            <RowDefinition Height="60" />
+
             <!--  Start/Stop button  -->
             <RowDefinition Height="65" />
 
@@ -222,9 +225,10 @@
         <!--  Second row of options  -->
         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="60*" />
-                <ColumnDefinition Width="30*" />
-                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="38*" />
+                <ColumnDefinition Width="22*" />
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="20*" />
             </Grid.ColumnDefinitions>
 
             <!--  Optimisation level  -->
@@ -280,11 +284,75 @@
                     Rotate
                 </CheckBox>
             </StackPanel>
+
+            <!--  Cleaning mode  -->
+            <StackPanel
+                Grid.Column="3"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+
+                <Label
+                    Padding="0,4"
+                    HorizontalAlignment="Center"
+                    Content="Cleaning:"
+                    IsEnabled="false" />
+
+                <ComboBox
+                    Height="30"
+                    Margin="8,0,8,0"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    DisplayMemberPath="displayName"
+                    ItemsSource="{Binding CleaningOption}"
+                    SelectedItem="{Binding CleaningOption_Selected}" />
+            </StackPanel>
+        </Grid>
+
+        <!--  Third row of options  -->
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="58*" />
+                <ColumnDefinition Width="42*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <Label
+                    Padding="0,4"
+                    HorizontalAlignment="Center"
+                    Content="OCR Languages (-l):"
+                    IsEnabled="false" />
+
+                <TextBox
+                    Height="30"
+                    Margin="15,0,15,0"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Text="{Binding Languages, UpdateSourceTrigger=PropertyChanged}"
+                    TextWrapping="NoWrap"
+                    ToolTip="Examples: eng | eng+deu | eng+grc+deu" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+                <Label
+                    Padding="0,4"
+                    HorizontalAlignment="Center"
+                    Content="Tesseract PSM:"
+                    IsEnabled="false" />
+
+                <TextBox
+                    Height="30"
+                    Margin="15,0,15,0"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Text="{Binding TesseractPageSegMode, UpdateSourceTrigger=PropertyChanged}"
+                    TextWrapping="NoWrap"
+                    ToolTip="Passed as --tesseract-pagesegmode [number]. Default: 3" />
+            </StackPanel>
         </Grid>
 
 
         <!--  Advanced options expander  -->
-        <Grid Grid.Row="5">
+        <Grid Grid.Row="6">
 
             <Expander
                 x:Name="AdvancedOptionsExpander"
@@ -314,7 +382,7 @@
 
 
         <!--  Start/Stop button  -->
-        <Grid Grid.Row="6">
+        <Grid Grid.Row="7">
             <Button
                 Name="StartBtn"
                 Padding="20,4"
@@ -328,7 +396,7 @@
 
 
         <!--  Status label & progress bar  -->
-        <Grid Grid.Row="7">
+        <Grid Grid.Row="8">
 
             <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
 
