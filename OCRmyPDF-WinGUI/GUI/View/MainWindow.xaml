@@ -60,15 +60,15 @@
             <!--  Second row of options  -->
             <RowDefinition Height="60" />
 
+            <!--  Third row of options  -->
+            <RowDefinition Height="60" />
+
             <!--  Advanced options expander  -->
             <RowDefinition Height="{Binding AdvancedOptionsHeight}" />
             <!--  Non-Expanded:  -->
             <!--<RowDefinition Height="30" />-->
             <!--  Expanded:  -->
             <!--<RowDefinition Height="90" />-->
-
-            <!--  Third row of options  -->
-            <RowDefinition Height="60" />
 
             <!--  Start/Stop button  -->
             <RowDefinition Height="65" />
