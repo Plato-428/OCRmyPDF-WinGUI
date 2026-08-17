@@ -17,7 +17,9 @@ namespace OcrMyPdf.Logic
 
         public string tesseractPageSegMode { get; set; }             = "3";
 
-        public string outputSuffix { get; set; }                    = "_Searchable";
+        public string imageDpi { get; set; }                         = "";
+
+        public string outputSuffix { get; set; }                     = "_ocr";
 
         public bool rotate { get; set; }                            = true;
 

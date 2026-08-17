@@ -311,8 +311,9 @@
         <!--  Third row of options  -->
         <Grid Grid.Row="5">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="58*" />
-                <ColumnDefinition Width="42*" />
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="30*" />
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0">
@@ -347,6 +348,23 @@
                     Text="{Binding TesseractPageSegMode, UpdateSourceTrigger=PropertyChanged}"
                     TextWrapping="NoWrap"
                     ToolTip="Passed as --tesseract-pagesegmode [number]. Default: 3" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="2">
+                <Label
+                    Padding="0,4"
+                    HorizontalAlignment="Center"
+                    Content="Image DPI:"
+                    IsEnabled="false" />
+
+                <TextBox
+                    Height="30"
+                    Margin="15,0,15,0"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Text="{Binding ImageDpi, UpdateSourceTrigger=PropertyChanged}"
+                    TextWrapping="NoWrap"
+                    ToolTip="Passed as --image-dpi [number]. Leave blank to omit." />
             </StackPanel>
         </Grid>
 

@@ -85,6 +85,12 @@ namespace OcrMyPdf.Logic
                 argsBuilder.AppendWithSeparator(argsSprtr, optionSet.tesseractPageSegMode.Trim());
             }
 
+            if (!string.IsNullOrWhiteSpace(optionSet.imageDpi))
+            {
+                argsBuilder.AppendWithSeparator(argsSprtr, SimpleOptionParams.imageDpi);
+                argsBuilder.AppendWithSeparator(argsSprtr, optionSet.imageDpi.Trim());
+            }
+
             return argsBuilder.ToString();
         }
     }
