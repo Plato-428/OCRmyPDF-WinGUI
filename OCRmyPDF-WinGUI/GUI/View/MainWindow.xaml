@@ -283,6 +283,14 @@
                 <CheckBox Margin="3,3,3,3" IsChecked="{Binding Rotate}">
                     Rotate
                 </CheckBox>
+
+                <CheckBox Margin="3,3,3,3" IsChecked="{Binding Grayscale}">
+                    Grayscale
+                </CheckBox>
+
+                <CheckBox Margin="3,3,3,3" IsChecked="{Binding Monochrome}">
+                    Monochrome
+                </CheckBox>
             </StackPanel>
 
             <!--  Cleaning mode  -->
@@ -311,9 +319,10 @@
         <!--  Third row of options  -->
         <Grid Grid.Row="5">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40*" />
-                <ColumnDefinition Width="30*" />
-                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="33*" />
+                <ColumnDefinition Width="22*" />
+                <ColumnDefinition Width="22*" />
+                <ColumnDefinition Width="23*" />
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0">
@@ -365,6 +374,23 @@
                     Text="{Binding ImageDpi, UpdateSourceTrigger=PropertyChanged}"
                     TextWrapping="NoWrap"
                     ToolTip="Passed as --image-dpi [number]. Leave blank to omit." />
+            </StackPanel>
+
+            <StackPanel Grid.Column="3">
+                <Label
+                    Padding="0,4"
+                    HorizontalAlignment="Center"
+                    Content="Oversample DPI:"
+                    IsEnabled="false" />
+
+                <TextBox
+                    Height="30"
+                    Margin="15,0,15,0"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Text="{Binding Oversample, UpdateSourceTrigger=PropertyChanged}"
+                    TextWrapping="NoWrap"
+                    ToolTip="Passed as --oversample [number]. Leave blank to omit." />
             </StackPanel>
         </Grid>
 

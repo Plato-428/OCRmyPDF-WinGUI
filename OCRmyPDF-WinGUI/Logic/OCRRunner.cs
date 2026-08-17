@@ -73,6 +73,10 @@ namespace OcrMyPdf.Logic
 
             if (optionSet.deskew) argsBuilder.AppendWithSeparator(argsSprtr, SimpleOptionParams.deskew);
 
+            if (optionSet.grayscale) argsBuilder.AppendWithSeparator(argsSprtr, SimpleOptionParams.grayscale);
+
+            if (optionSet.monochrome) argsBuilder.AppendWithSeparator(argsSprtr, SimpleOptionParams.monochrome);
+
             if (!string.IsNullOrWhiteSpace(optionSet.languages))
             {
                 argsBuilder.AppendWithSeparator(argsSprtr, SimpleOptionParams.language);
@@ -89,6 +93,12 @@ namespace OcrMyPdf.Logic
             {
                 argsBuilder.AppendWithSeparator(argsSprtr, SimpleOptionParams.imageDpi);
                 argsBuilder.AppendWithSeparator(argsSprtr, optionSet.imageDpi.Trim());
+            }
+
+            if (!string.IsNullOrWhiteSpace(optionSet.oversample))
+            {
+                argsBuilder.AppendWithSeparator(argsSprtr, SimpleOptionParams.oversample);
+                argsBuilder.AppendWithSeparator(argsSprtr, optionSet.oversample.Trim());
             }
 
             return argsBuilder.ToString();
