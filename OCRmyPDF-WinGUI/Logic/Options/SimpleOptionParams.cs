@@ -9,5 +9,7 @@
         public static string tesseractPageSegMode = "--tesseract-pagesegmode";
 
         public static string language = "-l";
+
+        public static string imageDpi = "--image-dpi";
     }
 }

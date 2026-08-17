@@ -168,6 +168,14 @@ namespace OcrMyPdf.Gui.ViewModel
             set { ocrOptions.tesseractPageSegMode = value; OnPropertyChanged(); }
         }
 
+        // ----- OCR image DPI
+
+        public string ImageDpi
+        {
+            get { return ocrOptions.imageDpi; }
+            set { ocrOptions.imageDpi = value; OnPropertyChanged(); }
+        }
+
         // ----- Output File Suffix
 
         public string Suffix
