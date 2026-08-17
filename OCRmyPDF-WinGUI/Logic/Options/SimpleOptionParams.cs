@@ -11,5 +11,11 @@
         public static string language = "-l";
 
         public static string imageDpi = "--image-dpi";
+
+        public static string oversample = "--oversample";
+
+        public static string grayscale = "--tesseract-downsample-large-images";
+
+        public static string monochrome = "--tesseract-downsample-above";
     }
 }

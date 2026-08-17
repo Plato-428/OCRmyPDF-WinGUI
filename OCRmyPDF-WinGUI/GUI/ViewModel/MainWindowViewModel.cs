@@ -176,6 +176,14 @@ namespace OcrMyPdf.Gui.ViewModel
             set { ocrOptions.imageDpi = value; OnPropertyChanged(); }
         }
 
+        // ----- OCR oversample DPI
+
+        public string Oversample
+        {
+            get { return ocrOptions.oversample; }
+            set { ocrOptions.oversample = value; OnPropertyChanged(); }
+        }
+
         // ----- Output File Suffix
 
         public string Suffix
@@ -198,6 +206,22 @@ namespace OcrMyPdf.Gui.ViewModel
         {
             get { return ocrOptions.rotate; }
             set { ocrOptions.rotate = value; OnPropertyChanged(); }
+        }
+
+        // ----- Grayscale conversion
+
+        public bool Grayscale
+        {
+            get { return ocrOptions.grayscale; }
+            set { ocrOptions.grayscale = value; OnPropertyChanged(); }
+        }
+
+        // ----- Monochrome conversion
+
+        public bool Monochrome
+        {
+            get { return ocrOptions.monochrome; }
+            set { ocrOptions.monochrome = value; OnPropertyChanged(); }
         }
 
         // ---------------------- ADVANCED OPTIONS ----------------------
